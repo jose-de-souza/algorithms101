@@ -1,14 +1,14 @@
 package datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class QueueTest {
 
     private Queue queue;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         queue = new Queue();
     }
@@ -19,7 +19,7 @@ public class QueueTest {
         queue.add(2);
         queue.add(21);
 
-        Assert.assertEquals(5, queue.peek());
+        Assertions.assertEquals(5, queue.peek());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class QueueTest {
         queue.add(35);
         queue.remove();
 
-        Assert.assertEquals(11, queue.peek());
+        Assertions.assertEquals(11, queue.peek());
     }
 
     @Test
@@ -40,6 +40,6 @@ public class QueueTest {
         queue.add(8);
         queue.remove();
 
-        Assert.assertEquals(true, queue.isEmpty());
+        Assertions.assertEquals(true, queue.isEmpty());
     }
 }

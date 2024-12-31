@@ -1,14 +1,14 @@
 package algorithms;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class MergeSortTest {
 
     private MergeSort mergeSort;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         mergeSort = new MergeSort();
     }
@@ -24,13 +24,13 @@ public class MergeSortTest {
 
         mergeSort.sort(arr, l, r);
 
-        Assert.assertEquals(1, arr[0]);
-        Assert.assertEquals(3, arr[1]);
-        Assert.assertEquals(4, arr[2]);
-        Assert.assertEquals(7, arr[3]);
-        Assert.assertEquals(9, arr[4]);
-        Assert.assertEquals(14, arr[5]);
-        Assert.assertEquals(17, arr[6]);
+        Assertions.assertEquals(1, arr[0]);
+        Assertions.assertEquals(3, arr[1]);
+        Assertions.assertEquals(4, arr[2]);
+        Assertions.assertEquals(7, arr[3]);
+        Assertions.assertEquals(9, arr[4]);
+        Assertions.assertEquals(14, arr[5]);
+        Assertions.assertEquals(17, arr[6]);
 
         System.out.println("\nSorted array");
         mergeSort.printArray(arr);

@@ -1,16 +1,16 @@
 package challenges.linkedLists;
 
 import datastructures.Stack;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class LinkedListsTest {
 
     private LinkedListAdder adder;
     private Palindrome palindrome;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         adder = new LinkedListAdder();
         palindrome = new Palindrome();
@@ -27,7 +27,7 @@ public class LinkedListsTest {
 
         linkedList.removeDuplicates();
 
-        Assert.assertEquals(2, linkedList.size());
+        Assertions.assertEquals(2, linkedList.size());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class LinkedListsTest {
         Stack sum = adder.sum(first, second);
 
         // Check the result
-        Assert.assertEquals(3, sum.size());
+        Assertions.assertEquals(3, sum.size());
 
         while(!sum.isEmpty()) {
             System.out.println(sum.pop());
@@ -91,7 +91,7 @@ public class LinkedListsTest {
         loopDetector.addBack(node3); // loop!
 
 
-        Assert.assertTrue(loopDetector.hasLoop());
+        Assertions.assertTrue(loopDetector.hasLoop());
     }
 
 }

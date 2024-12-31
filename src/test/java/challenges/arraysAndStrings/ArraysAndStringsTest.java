@@ -1,9 +1,9 @@
 package challenges.arraysAndStrings;
 
 import datastructures.PrettyPrinter;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class ArraysAndStringsTest {
     private Zeroer1 zeroer1;
     private Zeroer2 zeroer2;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         charDetector = new UniqueCharacterDetector();
         permDetector = new PermutationDetector();
@@ -34,16 +34,16 @@ public class ArraysAndStringsTest {
     public void UniqueCharacters() {
         // Challenge: Given a string, see if you can detect whether it contains only
         // unique chars
-        Assert.assertTrue(charDetector.isUnique("ab"));
-        Assert.assertFalse(charDetector.isUnique("aa"));
-        Assert.assertTrue(charDetector.isUnique("abcdefghijklmnopqrstuvwxyz"));
+        Assertions.assertTrue(charDetector.isUnique("ab"));
+        Assertions.assertFalse(charDetector.isUnique("aa"));
+        Assertions.assertTrue(charDetector.isUnique("abcdefghijklmnopqrstuvwxyz"));
     }
 
     @Test
     public void PermutationOfTheOther() {
         // Challenge: Given two strings, check if one is a permutation of the other
-        Assert.assertTrue(permDetector.isPermutation("abc", "cba"));
-        Assert.assertFalse(permDetector.isPermutation("abc", "xyz"));
+        Assertions.assertTrue(permDetector.isPermutation("abc", "cba"));
+        Assertions.assertFalse(permDetector.isPermutation("abc", "xyz"));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ArraysAndStringsTest {
         // Challenge: See if you can replaces all the spaces in a a string with the
         // ASCII symbol for space '%20'. Assume you are given the length of the final
         // string. Hint: Use array of char[]
-        Assert.assertEquals("My%20Home%20Page", urlConverter.urlify("My Home Page    ", 16));
+        Assertions.assertEquals("My%20Home%20Page", urlConverter.urlify("My Home Page    ", 16));
 
     }
 
@@ -60,11 +60,11 @@ public class ArraysAndStringsTest {
         // Challenge: Detect if a given string is a palindrome.
         // A palindrome is a word that can be spelt the same way forwards and backwards.
 
-        Assert.assertTrue(palindromeDetector.isPalindrome("abba"));
-        Assert.assertTrue(palindromeDetector.isPalindrome("mom"));
-        Assert.assertTrue(palindromeDetector.isPalindrome("dad"));
-        Assert.assertFalse(palindromeDetector.isPalindrome("rush"));
-        Assert.assertFalse(palindromeDetector.isPalindrome("yes"));
+        Assertions.assertTrue(palindromeDetector.isPalindrome("abba"));
+        Assertions.assertTrue(palindromeDetector.isPalindrome("mom"));
+        Assertions.assertTrue(palindromeDetector.isPalindrome("dad"));
+        Assertions.assertFalse(palindromeDetector.isPalindrome("rush"));
+        Assertions.assertFalse(palindromeDetector.isPalindrome("yes"));
     }
 
     @Test
@@ -73,18 +73,18 @@ public class ArraysAndStringsTest {
         // remove a character, or replace a character. Given two strings, write a function to check if they are
         // one or zero edits away.
 
-        Assert.assertFalse(oneAwayDetector.oneAway("pale", "paleXXXX"));
+        Assertions.assertFalse(oneAwayDetector.oneAway("pale", "paleXXXX"));
         
-        Assert.assertTrue(oneAwayDetector.oneAway("pale", "ple"));
-        Assert.assertTrue(oneAwayDetector.oneAway("pales", "pale"));
-        Assert.assertTrue(oneAwayDetector.oneAway("pale", "bale"));
-        Assert.assertFalse(oneAwayDetector.oneAway("pale", "bake"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pale", "ple"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pales", "pale"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pale", "bale"));
+        Assertions.assertFalse(oneAwayDetector.oneAway("pale", "bake"));
 
-        Assert.assertTrue(oneAwayDetector.oneAway("pale", "aale"));
-        Assert.assertTrue(oneAwayDetector.oneAway("pale", "pble"));
-        Assert.assertTrue(oneAwayDetector.oneAway("pale", "palk"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pale", "aale"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pale", "pble"));
+        Assertions.assertTrue(oneAwayDetector.oneAway("pale", "palk"));
 
-        Assert.assertFalse(oneAwayDetector.oneAway("pale", "bakeerer"));
+        Assertions.assertFalse(oneAwayDetector.oneAway("pale", "bakeerer"));
     }
 
     @Test
@@ -94,12 +94,12 @@ public class ArraysAndStringsTest {
         // by the number of times it appears in the string (i.e "a3b2").
         // If the compressed string is not smaller than original, return original.
 
-        Assert.assertEquals("a3b2", compressor.compress("aaabb"));
-        Assert.assertEquals("aabb", compressor.compress("aabb"));
-        Assert.assertEquals("ab", compressor.compress("ab"));
-        Assert.assertEquals("abc", compressor.compress("abc"));
-        Assert.assertEquals("z3", compressor.compress("zzz"));
-        Assert.assertEquals("aabbaabb", compressor.compress("aabbaabb")); // not shorter
+        Assertions.assertEquals("a3b2", compressor.compress("aaabb"));
+        Assertions.assertEquals("aabb", compressor.compress("aabb"));
+        Assertions.assertEquals("ab", compressor.compress("ab"));
+        Assertions.assertEquals("abc", compressor.compress("abc"));
+        Assertions.assertEquals("z3", compressor.compress("zzz"));
+        Assertions.assertEquals("aabbaabb", compressor.compress("aabbaabb")); // not shorter
     }
 
     @Test
@@ -125,9 +125,9 @@ public class ArraysAndStringsTest {
         // Step 1: Get zeros
         ArrayList<Zeroer1.Pair> zeros = zeroer1.getZeros(matrix);
 
-        Assert.assertEquals(1, zeros.size());
-        Assert.assertEquals(1, zeros.get(0).y);
-        Assert.assertEquals(0, zeros.get(0).x);
+        Assertions.assertEquals(1, zeros.size());
+        Assertions.assertEquals(1, zeros.get(0).y);
+        Assertions.assertEquals(0, zeros.get(0).x);
 
         // Step 2a: Zero out a row
         zeroer1.zeroOutRow(zeros.get(0).y, matrix);

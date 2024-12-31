@@ -1,14 +1,14 @@
 package algorithms;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class QuickSortTest {
 
     private QuickSort quickSort;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         quickSort = new QuickSort();
     }
@@ -19,15 +19,15 @@ public class QuickSortTest {
 
         int[] sorted = quickSort.sort(array);
 
-        Assert.assertEquals(1, sorted[0]);
-        Assert.assertEquals(2, sorted[1]);
-        Assert.assertEquals(3, sorted[2]);
-        Assert.assertEquals(5, sorted[3]);
-        Assert.assertEquals(6, sorted[4]);
-        Assert.assertEquals(7, sorted[5]);
-        Assert.assertEquals(8, sorted[6]);
-        Assert.assertEquals(9, sorted[7]);
-        Assert.assertEquals(15, sorted[8]);
+        Assertions.assertEquals(1, sorted[0]);
+        Assertions.assertEquals(2, sorted[1]);
+        Assertions.assertEquals(3, sorted[2]);
+        Assertions.assertEquals(5, sorted[3]);
+        Assertions.assertEquals(6, sorted[4]);
+        Assertions.assertEquals(7, sorted[5]);
+        Assertions.assertEquals(8, sorted[6]);
+        Assertions.assertEquals(9, sorted[7]);
+        Assertions.assertEquals(15, sorted[8]);
 
         quickSort.prettyPrint(sorted);
     }

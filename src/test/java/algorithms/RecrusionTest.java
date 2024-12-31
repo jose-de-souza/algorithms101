@@ -1,14 +1,14 @@
 package algorithms;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class RecrusionTest {
 
     private Recursion recursion;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         recursion = new Recursion();
     }
@@ -24,10 +24,10 @@ public class RecrusionTest {
      */
     @Test
     public void StripLeadingZeros() {
-        Assert.assertEquals("1", recursion.stripZeros("0001"));
-        Assert.assertEquals("11", recursion.stripZeros("00011"));
-        Assert.assertEquals("1989", recursion.stripZeros("00001989"));
-        Assert.assertEquals("VOD", recursion.stripZeros("VOD"));
+        Assertions.assertEquals("1", recursion.stripZeros("0001"));
+        Assertions.assertEquals("11", recursion.stripZeros("00011"));
+        Assertions.assertEquals("1989", recursion.stripZeros("00001989"));
+        Assertions.assertEquals("VOD", recursion.stripZeros("VOD"));
     }
 
 }

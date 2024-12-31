@@ -1,8 +1,8 @@
 package challenges.interviews;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ public class FaceBookInterviewTest {
 
     private FaceBookArrayIntersector intersector;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         intersector = new FaceBookArrayIntersector();
     }
@@ -28,7 +28,7 @@ public class FaceBookInterviewTest {
         expected.add(5);
 
         // this test currently fails - see if you can make it pass
-        Assert.assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class FaceBookInterviewTest {
         expected.add(2);
         expected.add(5);
 
-        Assert.assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
@@ -56,7 +56,7 @@ public class FaceBookInterviewTest {
         expected.add(2);
         expected.add(5);
 
-        Assert.assertEquals(expected, result);
+        Assertions.assertEquals(expected, result);
     }
 
     // Q1: Write out binary tree node
@@ -139,9 +139,9 @@ public class FaceBookInterviewTest {
         // Copy
         Node newNode1 = node1.copy();
 
-        Assert.assertEquals(newNode1.key, node1.key);
-        Assert.assertEquals(newNode1.left.key, node1.left.key);
-        Assert.assertEquals(newNode1.right.key, node1.right.key);
+        Assertions.assertEquals(newNode1.key, node1.key);
+        Assertions.assertEquals(newNode1.left.key, node1.left.key);
+        Assertions.assertEquals(newNode1.right.key, node1.right.key);
 
         // InOrderTraversal
         node1.inOrderTraversal();
@@ -176,9 +176,9 @@ public class FaceBookInterviewTest {
         // Copy
         Node newNode5 = node5.copy();
 
-        Assert.assertEquals(newNode5.key, node5.key);
-        Assert.assertEquals(newNode5.left.key, node5.left.key);
-        Assert.assertEquals(newNode5.right.key, node5.right.key);
+        Assertions.assertEquals(newNode5.key, node5.key);
+        Assertions.assertEquals(newNode5.left.key, node5.left.key);
+        Assertions.assertEquals(newNode5.right.key, node5.right.key);
 
         // InOrderTraversal
         node5.inOrderTraversal();
@@ -189,7 +189,7 @@ public class FaceBookInterviewTest {
         node7.right = node9;
 
         // Verify copied node wasn't affected - and still points to 8
-        Assert.assertEquals(newNode5.right.right.key, 8);
+        Assertions.assertEquals(newNode5.right.right.key, 8);
     }
 
 }

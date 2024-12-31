@@ -1,14 +1,14 @@
 package datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class StackTest {
 
     private Stack stack;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         stack = new Stack();
     }
@@ -19,9 +19,9 @@ public class StackTest {
         stack.push(25);
         stack.push(75);
 
-        Assert.assertEquals(3, stack.size());
-        Assert.assertEquals(75, stack.peek());
-        Assert.assertEquals(false, stack.isEmpty());
+        Assertions.assertEquals(3, stack.size());
+        Assertions.assertEquals(75, stack.peek());
+        Assertions.assertEquals(false, stack.isEmpty());
     }
 
     @Test
@@ -32,9 +32,9 @@ public class StackTest {
         stack.push(35);
         stack.pop();
 
-        Assert.assertEquals(15, stack.peek());
-        Assert.assertEquals(1, stack.size());
-        Assert.assertEquals(false, stack.isEmpty());
-        Assert.assertEquals(15, stack.pop());
+        Assertions.assertEquals(15, stack.peek());
+        Assertions.assertEquals(1, stack.size());
+        Assertions.assertEquals(false, stack.isEmpty());
+        Assertions.assertEquals(15, stack.pop());
     }
 }

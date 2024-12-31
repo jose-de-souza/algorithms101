@@ -1,14 +1,14 @@
 package algorithms;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class NodeBSTTest {
 
     private NodeBST node;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         node = new NodeBST(10);
         node.insert(5);
@@ -18,9 +18,9 @@ public class NodeBSTTest {
 
     @Test
     public void Contains() {
-        Assert.assertTrue(node.contains(5));
-        Assert.assertTrue(node.contains(15));
-        Assert.assertTrue(node.contains(8));
+        Assertions.assertTrue(node.contains(5));
+        Assertions.assertTrue(node.contains(15));
+        Assertions.assertTrue(node.contains(8));
     }
 
     @Test

@@ -1,14 +1,14 @@
 package challenges.stacksAndQueues;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class StacksAndQueuesTest {
 
     private MinStack minStack;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         minStack = new MinStack();
     }
@@ -23,11 +23,11 @@ public class StacksAndQueuesTest {
         minStack.push(6);
         minStack.push(3);
         minStack.push(7);
-        Assert.assertEquals(3, minStack.min());
+        Assertions.assertEquals(3, minStack.min());
         minStack.pop();
-        Assert.assertEquals(3, minStack.min());
+        Assertions.assertEquals(3, minStack.min());
         minStack.pop();
-        Assert.assertEquals(5, minStack.min());
+        Assertions.assertEquals(5, minStack.min());
     }
 
     @Test
@@ -47,11 +47,11 @@ public class StacksAndQueuesTest {
         plates.push(3);
         plates.push(4);
         plates.push(5);
-        Assert.assertEquals(5, plates.pop());
-        Assert.assertEquals(4, plates.pop());
-        Assert.assertEquals(3, plates.pop());
-        Assert.assertEquals(2, plates.pop());
-        Assert.assertEquals(1, plates.pop());
+        Assertions.assertEquals(5, plates.pop());
+        Assertions.assertEquals(4, plates.pop());
+        Assertions.assertEquals(3, plates.pop());
+        Assertions.assertEquals(2, plates.pop());
+        Assertions.assertEquals(1, plates.pop());
     }
 
 }

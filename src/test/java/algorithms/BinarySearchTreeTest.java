@@ -1,14 +1,14 @@
 package algorithms;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BinarySearchTreeTest {
 
     private BinarySearchTree bst;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         bst = new BinarySearchTree();
     }
@@ -23,14 +23,14 @@ public class BinarySearchTreeTest {
         bst.insert(6, "f");
         bst.insert(8, "h");
 
-        Assert.assertEquals("e", bst.find(5));
-        Assert.assertEquals("c", bst.find(3));
-        Assert.assertEquals("b", bst.find(2));
-        Assert.assertEquals("d", bst.find(4));
-        Assert.assertEquals("g", bst.find(7));
-        Assert.assertEquals("f", bst.find(6));
-        Assert.assertEquals("h", bst.find(8));
-        Assert.assertEquals(null, bst.find(99));
+        Assertions.assertEquals("e", bst.find(5));
+        Assertions.assertEquals("c", bst.find(3));
+        Assertions.assertEquals("b", bst.find(2));
+        Assertions.assertEquals("d", bst.find(4));
+        Assertions.assertEquals("g", bst.find(7));
+        Assertions.assertEquals("f", bst.find(6));
+        Assertions.assertEquals("h", bst.find(8));
+        Assertions.assertEquals(null, bst.find(99));
 
         bst.prettyPrint();
 
@@ -45,7 +45,7 @@ public class BinarySearchTreeTest {
         bst.insert(3, "c");
         bst.insert(2, "b");
 
-        Assert.assertEquals(2, bst.findMinKey());
+        Assertions.assertEquals(2, bst.findMinKey());
     }
 
     @Test
@@ -60,7 +60,7 @@ public class BinarySearchTreeTest {
 
         bst.delete(2);
 
-        Assert.assertNull(bst.find(2));
+        Assertions.assertNull(bst.find(2));
 
         bst.prettyPrint();
     }
@@ -76,7 +76,7 @@ public class BinarySearchTreeTest {
 
         bst.delete(7);
 
-        Assert.assertNull(bst.find(7));
+        Assertions.assertNull(bst.find(7));
 
         bst.prettyPrint();
     }
@@ -93,7 +93,7 @@ public class BinarySearchTreeTest {
 
         bst.delete(7);
 
-        Assert.assertNull(bst.find(7));
+        Assertions.assertNull(bst.find(7));
 
         bst.prettyPrint();
     }
@@ -108,6 +108,6 @@ public class BinarySearchTreeTest {
         bst.insert(6, "f");
         bst.insert(8, "h");
 
-        Assert.assertTrue(bst.checkBST(bst.root));
+        Assertions.assertTrue(bst.checkBST(bst.root));
     }
 }

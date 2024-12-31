@@ -1,14 +1,14 @@
 package datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DynamicArrayTest {
 
     private DynamicArray array;
 
-    @Before
+    @BeforeEach
     public void SetUp() {
         array = new DynamicArray<String>(2);
     }
@@ -16,7 +16,7 @@ public class DynamicArrayTest {
     @Test
     public void GetAndSet() {
         array.set(0, "a");
-        Assert.assertEquals("a", array.get(0));
+        Assertions.assertEquals("a", array.get(0));
     }
 
     @Test
@@ -27,11 +27,11 @@ public class DynamicArrayTest {
 
         array.insert(1, "d");
 
-        Assert.assertEquals(4, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("d", array.get(1));
-        Assert.assertEquals("b", array.get(2));
-        Assert.assertEquals("c", array.get(3));
+        Assertions.assertEquals(4, array.size());
+        Assertions.assertEquals("a", array.get(0));
+        Assertions.assertEquals("d", array.get(1));
+        Assertions.assertEquals("b", array.get(2));
+        Assertions.assertEquals("c", array.get(3));
     }
 
     @Test
@@ -42,10 +42,10 @@ public class DynamicArrayTest {
 
         array.delete(0);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("b", array.get(0));
-        Assert.assertEquals("c", array.get(1));
-        Assert.assertEquals(null, array.get(2));
+        Assertions.assertEquals(2, array.size());
+        Assertions.assertEquals("b", array.get(0));
+        Assertions.assertEquals("c", array.get(1));
+        Assertions.assertEquals(null, array.get(2));
     }
 
     @Test
@@ -56,10 +56,10 @@ public class DynamicArrayTest {
 
         array.delete(1);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("c", array.get(1));
-        Assert.assertEquals(null, array.get(2));
+        Assertions.assertEquals(2, array.size());
+        Assertions.assertEquals("a", array.get(0));
+        Assertions.assertEquals("c", array.get(1));
+        Assertions.assertEquals(null, array.get(2));
     }
 
     @Test
@@ -70,37 +70,37 @@ public class DynamicArrayTest {
 
         array.delete(2);
 
-        Assert.assertEquals(2, array.size());
-        Assert.assertEquals("a", array.get(0));
-        Assert.assertEquals("b", array.get(1));
-        Assert.assertEquals(null, array.get(2));
+        Assertions.assertEquals(2, array.size());
+        Assertions.assertEquals("a", array.get(0));
+        Assertions.assertEquals("b", array.get(1));
+        Assertions.assertEquals(null, array.get(2));
     }
 
     @Test
     public void isEmpty() {
-        Assert.assertTrue(array.isEmpty());
+        Assertions.assertTrue(array.isEmpty());
         array.add("a");
-        Assert.assertFalse(array.isEmpty());
+        Assertions.assertFalse(array.isEmpty());
     }
 
     @Test
     public void Contains()  {
-        Assert.assertFalse(array.Contains("a"));
+        Assertions.assertFalse(array.Contains("a"));
         array.add("a");
-        Assert.assertTrue(array.Contains("a"));
+        Assertions.assertTrue(array.Contains("a"));
         array.add("b");
         array.add("b");
         array.add("c");
-        Assert.assertTrue(array.Contains("b"));
-        Assert.assertTrue(array.Contains("c"));
+        Assertions.assertTrue(array.Contains("b"));
+        Assertions.assertTrue(array.Contains("c"));
         array.delete(3);
-        Assert.assertFalse(array.Contains("c"));
+        Assertions.assertFalse(array.Contains("c"));
         array.delete(2);
-        Assert.assertTrue(array.Contains("b"));
+        Assertions.assertTrue(array.Contains("b"));
         array.delete(1);
-        Assert.assertFalse(array.Contains("b"));
+        Assertions.assertFalse(array.Contains("b"));
         array.delete(0);
-        Assert.assertFalse(array.Contains("a"));
+        Assertions.assertFalse(array.Contains("a"));
     }
 
 }
